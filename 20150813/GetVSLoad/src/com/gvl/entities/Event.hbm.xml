@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.gvl.entities.Event" table="EVENT"
+		proxy="com.gvl.entities.IEvent">
+		<id name="id" column="EVENT_ID" type="int" />
+		<property name="eventDate" column="EVENT_DT" type="date" />
+		<property name="description" column="DESCR" />
+		<property name="hours" column="HOURS" />
+		<property name="noOfParticipants" column="NO_OF_PARTICIPANTS" />
+	</class>
+</hibernate-mapping>

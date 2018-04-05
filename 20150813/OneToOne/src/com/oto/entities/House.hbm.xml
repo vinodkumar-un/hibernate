@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oto.entities">
+	<class name="House" table="HOUSE">
+		<id name="houseNo" column="HOUSE_NO">
+			<generator class="increment" />
+		</id>
+		<property name="description" column="DESCR" />
+		<property name="type" column="PROPERTY_TYPE" />
+		<property name="location" column="LOCATION" />
+		<property name="price" column="PRICE" />
+	</class>
+</hibernate-mapping>

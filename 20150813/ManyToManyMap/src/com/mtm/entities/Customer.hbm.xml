@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mtm.entities">
+	<class name="Customer" table="CUSTOMER">
+		<id name="customerId" column="CUSTOMER_ID">
+			<generator class="increment" />
+		</id>
+		<property name="firstName" column="FIRST_NM" />
+		<property name="lastName" column="LAST_NM" />
+		<property name="gender" column="GENDER" />
+		<property name="dob" column="DOB" />
+		<property name="mobile" column="MOBILE" />
+		<property name="email" column="EMAIL" />
+		<map name="accounts" table="CUSTOMER_ACCOUNTS" cascade="save-update">
+			<key column="P_CUSTOMER_ID" not-null="true" />
+			<map-key column="ATM_CARD_NO" type="string" length="16" />
+			<many-to-many class="OpenedAccount">
+				<column name="P_ACCOUNT_NO" not-null="true" />
+			</many-to-many>
+		</map>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+

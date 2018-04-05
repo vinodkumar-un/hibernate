@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.fh.entities.Customer" table="CUSTOMER">
+		<id name="customerID" column="CUSTOMER_ID" />
+		<property name="firstName" column="FIRST_NM" />
+		<property name="lastName" column="LAST_NM" />
+		<property name="dob" column="DOB" type="date" />
+		<property name="gender" column="GENDER" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otm.entities">
+	<class name="Ticket" table="TICKET">
+		<id name="ticketNo" column="TICKET_NO">
+			<generator class="increment" />
+		</id>
+		<property name="journeyDate" column="JOURNEY_DT" />
+		<property name="type" column="TYPE" />
+		<property name="seatNo" column="SEAT_NO" />
+		<property name="amount" column="AMOUNT" />
+	</class>
+</hibernate-mapping>

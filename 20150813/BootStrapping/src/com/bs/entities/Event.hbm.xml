@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2015 8:30:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bs.entities.Event" table="EVENT">
+        <id name="eventId" type="int">
+            <column name="EVENTID" />
+            <generator class="assigned" />
+        </id>
+        <property name="eventDate" type="java.util.Date">
+            <column name="EVENTDATE" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="hours" type="int">
+            <column name="HOURS" />
+        </property>
+        <property name="noOfParticipants" type="int">
+            <column name="NOOFPARTICIPANTS" />
+        </property>
+    </class>
+</hibernate-mapping>

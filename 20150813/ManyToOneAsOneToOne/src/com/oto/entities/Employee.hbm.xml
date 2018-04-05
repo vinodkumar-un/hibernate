@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oto.entities">
+	<class name="Employee" table="EMPLOYEE">
+		<id name="employeeId" column="EMPLOYEE_ID">
+			<generator class="increment" />
+		</id>
+		<property name="firstName" column="FIRST_NM" />
+		<property name="lastName" column="LAST_NM" />
+		<property name="designation" column="DESG" />
+		<property name="salary" column="SALARY" />
+		<many-to-one name="pfAccount" class="PFAccount" fetch="join">
+			<column name="EPF_ACCOUNT_NO" not-null="true" unique="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ht.entities.Bill" table="BILL">
+		<id name="billNo" type="int">
+			<column name="BILL_NO" length="5" />
+		</id>
+		<property name="billDate" type="date">
+			<column name="BILL_DATE" not-null="true" />
+		</property>
+		<property name="description" type="string">
+			<column name="DESCR" length="50" not-null="true" />
+		</property>
+		<property name="propertyName" type="string" />
+		<property name="amount" type="double">
+			<column name="AMOUNT" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

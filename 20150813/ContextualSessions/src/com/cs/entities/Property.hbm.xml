@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.entities">
+	<class name="Property" table="PROPERTY">
+		<id name="propertyId" column="PROPERTY_ID">
+			<generator class="increment" />
+		</id>
+		<property name="description" column="DESCR" />
+		<property name="type" column="TYPE" />
+		<property name="location" column="LOCATION" not-null="true" />
+		<property name="price" column="PRICE" not-null="true" />
+		<set name="users" table="USER_PROPERTIES" cascade="all">
+			<key column="P_PROPERTY_ID" />
+			<many-to-many column="P_USER_ID" class="User" />
+		</set>
+	</class>
+</hibernate-mapping>

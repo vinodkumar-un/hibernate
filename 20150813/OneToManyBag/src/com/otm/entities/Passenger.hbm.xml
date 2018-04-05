@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otm.entities">
+	<class name="Passenger" table="PASSENGER">
+		<id name="passengerId" column="PASSENGER_ID">
+			<generator class="increment" />
+		</id>
+		<property name="firstName" column="FIRST_NM" />
+		<property name="lastName" column="LAST_NM" />
+		<property name="gender" column="GENDER" />
+		<property name="age" column="AGE" />
+		<bag name="tickets" cascade="save-update">
+			<key column="TICKET_ISSUED_PASSENGER_ID" not-null="true" />
+			<one-to-many class="Ticket" />
+		</bag>
+	</class>
+</hibernate-mapping>
+
+
+

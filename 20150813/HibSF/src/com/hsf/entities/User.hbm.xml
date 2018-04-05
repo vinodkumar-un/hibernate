@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hsf.entities.User" table="TBLUSER">
+		<id name="userId" type="int">
+			<column name="USER_ID" />
+		</id>
+		<property name="firstName" type="string">
+			<column name="FIRST_NM" not-null="true" />
+		</property>
+		<property name="lastName" type="string">
+			<column name="LAST_NM" not-null="true" />
+		</property>
+		<property name="mobile" type="string">
+			<column name="MOBILE" not-null="true" />
+		</property>
+		<property name="email" type="string">
+			<column name="EMAIL" not-null="false" />
+		</property>
+		<property name="addressLine1" type="string">
+			<column name="ADDRESS_LINE_1" not-null="true" />
+		</property>
+		<property name="addressLine2" type="string">
+			<column name="ADDRESS_LINE_2" not-null="false" />
+		</property>
+		<property name="city" type="string">	
+			<column name="CITY" not-null="true"/>
+		</property>
+		<property name="state" type="string">
+			<column name="STATE" not-null="true"/>
+		</property>
+		<property name="zip" type="int">
+			<column name="ZIP" not-null="true"/>
+		</property>
+		<property name="country" type="string">
+			<column name="COUNTRY" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+

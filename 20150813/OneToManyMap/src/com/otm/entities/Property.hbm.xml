@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otm.entities">
+	<class name="Property" table="PROPERTY">
+		<id name="propertyId" column="PROPERTY_ID">
+			<generator class="increment" />
+		</id>
+		<property name="description" column="DESCR" />
+		<property name="type" column="TYPE" />
+		<property name="location" column="LOCATION" />
+		<property name="price" column="PRICE" />
+		<map name="workers" cascade="save-update">
+			<key column="WORKER_PROPERTY_ID" not-null="true" />
+			<map-key column="MOBILE" type="string" />
+			<one-to-many class="Worker" />
+		</map>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.idg.entities">
+	<class name="Agent" table="AGENT">
+		<id name="agentId" column="AGENT_ID">
+			<generator class="com.idg.custom.AgentIDGenerator">
+				<param name="org-code">DRG-AG-</param>
+			</generator>
+		</id>
+		<property name="firstName" column="FIRST_NM" />
+		<property name="lastName" column="LAST_NM" />
+		<property name="designation" column="DESG" />
+		<property name="mobile" column="MOBILE" unique="true"
+			not-null="true" />
+		<property name="email" column="EMAIL" />
+	</class>
+</hibernate-mapping>

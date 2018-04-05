@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ci.entities">
+	<class name="Student" table="STUDENT">
+		<composite-id name="id">
+			<key-property name="no" column="STUDENT_NO" />
+			<key-property name="branch" column="BRANCH_CODE" />
+		</composite-id>
+		<property name="firstName" column="FIRST_NM" />
+		<property name="lastName" column="LAST_NM" />
+		<property name="medium" column="MEDIUM" />
+		<property name="standard" column="STANDARD" />
+	</class>
+</hibernate-mapping>
