@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otml.entities">
+	<class name="Bus" table="BUS">
+		<id name="busNo" column="BUS_NO">
+			<generator class="increment" />
+		</id>
+		<property name="type" column="TYPE" />
+		<property name="capacity" column="CAPACITY" />
+		<property name="model" column="MODEL" />
+		<property name="make" column="MAKE" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mtms.entities">
+	<class name="Journey" table="JOURNEY">
+		<id name="journeyId" column="JOURNEY_ID">
+			<generator class="increment" />
+		</id>
+		<property name="source" column="SOURCE" />
+		<property name="destination" column="DESTINATION" />
+		<property name="dateOfJourney" column="DATE_OF_JOURNEY" />
+		<set name="passengers" table="JOURNEY_PASSENGER">
+			<key column="P_JOURNEY_ID" />
+			<many-to-many column="P_PASSENGER_ID" class="Passenger" />
+		</set>
+	</class>
+</hibernate-mapping>

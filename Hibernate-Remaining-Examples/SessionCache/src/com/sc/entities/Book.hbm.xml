@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sc.entities">
+	<class name="Book" table="BOOK">
+		<id name="isbn" column="ISBN"/>
+		<property name="title" column="TITLE"/>
+		<property name="amount" column="AMOUNT"/>
+	</class>
+</hibernate-mapping>

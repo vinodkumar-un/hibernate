@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mtmwx.entities">
+	<class name="Stock" table="STOCK">
+		<id name="stockId" column="STOCK_ID">
+			<generator class="increment"/>
+		</id>
+		<property name="stockNm" column="STOCK_NM"/>
+		<property name="holdingCompany" column="HOLDING_COMPANY"/>
+		<property name="price" column="PRICE"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ta.entities">
+	<class name="Journey" table="JOURNEY">
+		<id name="journeyId" column="JOURNEY_ID">
+			<generator class="increment" />
+		</id>
+		<property name="source" column="SOURCE" />
+		<property name="destination" column="DESTINATION" />
+		<property name="dateOfJourney" column="DATE_OF_JOURNEY" />
+		<many-to-one name="bus" column="P_BUS_NO" />
+		<set name="staff" table="JOURNEY_STAFF" inverse="true">
+			<key column="P_JOURNEY_ID" />
+			<many-to-many column="P_STAFF_ID" class="Staff" />
+		</set>
+		<set name="passengers" table="JOURNEY_PASSENGER" inverse="true">
+			<key column="P_JOURNEY_ID" />
+			<many-to-many column="P_PASSENGER_ID" class="Passenger" />
+		</set>
+		<set name="tickets" inverse="true">
+			<key column="P_JOURNEY_ID" />
+			<one-to-many class="Ticket" />
+		</set>
+	</class>
+	<query name="sql_get_journeys_btw_dates"><![CDATA[from Journey j where j.dateOfJourney between :p_start_dt and :p_end_dt]]></query>
+</hibernate-mapping>
+
+

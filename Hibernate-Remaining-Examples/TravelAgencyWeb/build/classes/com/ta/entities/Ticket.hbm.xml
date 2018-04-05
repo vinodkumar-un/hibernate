@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ta.entities">
+	<class name="Ticket" table="TICKET">
+		<id name="ticketNo" column="TICKET_ID">
+			<generator class="increment" />
+		</id>
+		<property name="type" column="TYPE" />
+		<property name="seatNo" column="SEAT_NO" />
+		<many-to-one name="journey" column="P_JOURNEY_ID" />
+		<many-to-one name="passenger" column="P_PASSENGER_ID" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otmm.entities">
+	<class name="Staff" table="STAFF">
+		<id name="staffId" column="STAFF_ID">
+			<generator class="increment" />
+		</id>
+		<property name="staffName" column="STAFF_NM" />
+		<property name="designation" column="DESGN" />
+		<property name="gender" column="GENDER" />
+		<property name="age" column="AGE" />
+	</class>
+</hibernate-mapping>

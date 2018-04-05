@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ta.entities">
+	<class name="Staff" table="STAFF">
+		<id name="staffId" column="STAFF_ID" unsaved-value="0">
+			<generator class="increment" />
+		</id>
+		<property name="firstNm" column="FIRST_NM" />
+		<property name="lastNm" column="LAST_NM" />
+		<property name="designation" column="DESG" />
+		<set name="journeys" table="JOURNEY_STAFF">
+			<key column="P_STAFF_ID" />
+			<many-to-many column="P_JOURNEY_ID" class="Journey" />
+		</set>		
+	</class>
+	<query name="sql_all_staff"><![CDATA[from Staff]]></query>
+</hibernate-mapping>

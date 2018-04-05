@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otmm.entities">
+	<class name="TravelAgency" table="TRAVEL_AGENCY">
+		<id name="travelAgencyId" column="TRAVEL_AGENCY_ID">
+			<generator class="increment" />
+		</id>
+		<property name="travelAgencyName" column="TRAVEL_AGENCY_NM" />
+		<property name="establishedDate" column="EST_DT" />
+		<property name="mobile" column="MOBILE_NUM" />
+		<map name="staff">
+			<key column="P_TRAVEL_AGENCY_ID" />
+			<map-key column="STAFF_ID" type="int"/>
+			<one-to-many class="Staff" />
+		</map>
+	</class>
+</hibernate-mapping>

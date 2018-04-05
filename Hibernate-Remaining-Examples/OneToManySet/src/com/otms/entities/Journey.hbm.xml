@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otms.entities">
+	<class name="Journey" table="JOURNEY">
+		<id name="journeyId" column="JOURNEY_ID">
+			<generator class="increment" />
+		</id>
+		<property name="source" column="SOURCE" />
+		<property name="destination" column="DESTINATION" />
+		<property name="dateOfJourney" column="DATE_OF_JOURNEY" />
+		<set name="tickets" inverse="true" cascade="all">
+			<key column="P_JOURNEY_ID" />
+			<one-to-many class="Ticket" />
+		</set>
+	</class>
+	<query name="sql_getAllJourneys"><![CDATA[from Journey ]]></query>
+	<sql-query name="getAllJourneys"><![CDATA[select * from JOURNEY]]></sql-query>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+

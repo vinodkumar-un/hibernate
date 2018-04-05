@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mtmwx.entities">
+	<class name="CustomerStock" table="CUSTOMER_STOCK">
+		<composite-id name="id">
+			<key-many-to-one name="pCustomer" column="P_CUSTOMER_ID" class="Customer"/>
+			<key-many-to-one name="pStock" column="P_STOCK_ID" class="Stock"/>
+		</composite-id>
+		<property name="quantity" column="QUANTITY" />
+		<property name="purchaseDate" column="PURCHASE_DT" />
+	</class>
+</hibernate-mapping>

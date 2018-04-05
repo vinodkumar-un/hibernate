@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oto.entities">
+	<class name="BillDetail" table="BILL_DETAIL">
+		<id name="billNo" column="BILL_NO">
+			<generator class="foreign">
+				<param name="property">bill</param>
+			</generator>
+		</id>
+		<property name="localCallCost" column="LOCAL_CALL_COST" />
+		<property name="stdCallCost" column="STD_CALL_COST" />
+		<property name="isdCallCost" column="ISD_CALL_COST" />
+		<one-to-one name="bill" />
+	</class>
+</hibernate-mapping>

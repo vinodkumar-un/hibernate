@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mmm.entities">
+	<class name="Account" table="ACCOUNT">
+		<id name="accountNo" column="ACCOUNT_NO">
+			<generator class="increment" />
+		</id>
+		<property name="accountHolderName" column="ACCOUNT_HOLDER_NM" />
+		<property name="type" column="TYPE" />
+		<property name="balance" column="BALANCE" />
+	</class>
+</hibernate-mapping>

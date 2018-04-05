@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ta.entities">
+	<class name="Bus" table="BUS">
+		<id name="busNo" column="BUS_NO" unsaved-value="0">
+			<generator class="increment" />
+		</id>
+		<property name="registrationNo" column="REG_NO" />
+		<property name="make" column="MAKE" />
+		<property name="model" column="MODEL" />
+		<property name="capacity" column="CAPACITY" />
+		<set name="journeys">
+			<key column="p_bus_no" />
+			<one-to-many class="Journey" />
+		</set>		
+	</class>
+	<query name="sql_all_busses"><![CDATA[from Bus]]></query>
+</hibernate-mapping>
