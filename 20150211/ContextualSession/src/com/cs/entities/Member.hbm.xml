@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.entities">
+	<class name="Member" table="MEMBER">
+		<id name="id" column="ID" />
+		<property name="firstNm" column="FIRST_NM" />
+		<property name="lastNm" column="LAST_NM" />
+		<property name="dob" column="DOB" />
+	</class>
+</hibernate-mapping>

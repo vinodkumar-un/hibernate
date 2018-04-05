@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sh.entities">
+	<class name="Doctor" table="DOCTOR">
+		<id name="doctorId" column="DOCTOR_ID" type="int" />
+		<property name="firstNm">
+			<column name="FIRST_NM" not-null="true" />
+		</property>
+		<property name="lastNm">
+			<column name="LAST_NM" />
+		</property>
+		<property name="specialization">
+			<column name="SPECIALIZATION" />
+		</property>
+		<property name="highestDegree">
+			<column name="HIGHEST_DEGREE" />
+		</property>
+		<property name="experience">
+			<column name="EXPERIENCE" />
+		</property>
+	</class>
+</hibernate-mapping>

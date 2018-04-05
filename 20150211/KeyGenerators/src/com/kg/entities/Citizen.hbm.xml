@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kg.entities">
+	<class name="Citizen" table="CITIZEN">
+		<id name="citizenId" column="CITIZEN_ID">
+			<generator class="com.kg.generators.SequenceKeyGenerator"/>
+		</id>
+		<property name="firstNm" column="FIRST_NM" />
+		<property name="lastNm" column="LAST_NM" />
+		<property name="dob" column="DOB" />
+		<property name="gender" column="GENDER" />
+	</class>
+</hibernate-mapping>

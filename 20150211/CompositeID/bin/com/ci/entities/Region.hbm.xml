@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ci.entities">
+	<class name="Region" table="REGION">
+		<composite-id name="id">
+			<key-property name="surveyNo" column="SURVEY_NO" />
+			<key-property name="plotNo" column="PLOT_NO" />
+		</composite-id>
+		<property name="area" column="AREA" />
+		<property name="type" column="TYPE" />
+	</class>
+</hibernate-mapping>
